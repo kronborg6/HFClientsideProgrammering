@@ -5,3 +5,7 @@ TODO finde en måde at bruge en database
     Jeg har start et nyt django projekt
     jeg har ikke fundet ud af hvad for en hjemmeside jeg vil lave i nu
     jeg er gået igang med at lave en base fil til hjemmesiden
+27/10-2020
+    Jeg har add en slider til home page
+    jeg er igang med at gøre mig klare til at lave nogle table
+    jeg add produt.html som hvor aller produt som bliver add til database skal visse der med en prise og hvor man kan få det i danmark
