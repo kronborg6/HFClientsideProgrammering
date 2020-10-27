@@ -1,3 +1,8 @@
 from django.db import models
 
-# Create your models here.
+
+class SnusProdut(models.Model):
+    pass
+
+class Kontak(models.Model):
+    pass
