@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.admin',
 
     'Site.apps.SiteConfig',
+    'Snus.apps.SnusConfig',
 
     'crispy_forms',
 
