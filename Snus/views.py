@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import kontakt
 from .forms import KontaktSender
+from django.contrib.auth.decorators import login_required
 
 def kontakt(request):
     if request.method == 'GET':
@@ -14,3 +15,7 @@ def kontakt(request):
             return redirect('web-home')
 
     return render(request, "Snus/Kontakt.html", {'form': form})
+
+@login_required
+def AddProdut(request):
+    pass

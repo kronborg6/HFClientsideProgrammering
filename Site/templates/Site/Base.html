@@ -45,9 +45,9 @@
                 </li>
                     {% else %}
                     <li class="nav-item">
-                    <a class="nav-link text-info" href="#">Login</a>
-                    <a class="nav-link text-info" id="button" href="#">LoginTest</a>
-                    <a class="nav-link text-info" id="button" onclick="document.getElementById('id01').style.display='block'">LoginTeeeest</a>
+                    <!--<a class="nav-link text-info" href="#">Login</a>
+                    <a class="nav-link text-info" id="button" href="#">LoginTest</a>-->
+                    <a class="nav-link text-info" id="button" onclick="document.getElementById('id01').style.display='block'">Login</a>
                 </li>
                 {% endif %}
                 {% if user.is_staff %}
@@ -63,26 +63,26 @@
 <body>
 {% if messages %}
     {% for message in messages %}
-        <div class="alert alert-{{ message.tags }}">
+        <div class="text-center alert alert-{{ message.tags }}">
             {{ message }}
         </div>
     {% endfor %}
 {% endif %}
 <div id="id01" class="modal">
 
-  <form class="modal-content animate" action="/action_page.php" method="post">
-
+  <form class="modal-content animate" action="" method="POST">
+    {% csrf_token %}
     <div class="container">
       <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+      <input type="text" placeholder="Enter Username" name="username" required>
 
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <input type="password" id="myInput" placeholder="Enter Password" name="password" required>
 
-      <button type="submit">Login</button>
-      <!--<label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>-->
+      <button type="submit" value="Login">Login</button>
+      <label>
+        <input type="checkbox" onclick="myFunction()"> Show Password
+      </label>
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
