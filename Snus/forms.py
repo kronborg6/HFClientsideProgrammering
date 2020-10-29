@@ -5,4 +5,4 @@ from django import forms
 class KontaktSender(forms.ModelForm):
     class Meta:
         model = kontakt
-        fields = '__all__'
+        fields = ['FullName', 'Email', 'subject', 'message']

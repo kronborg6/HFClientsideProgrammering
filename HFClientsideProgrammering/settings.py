@@ -24,8 +24,8 @@ SECRET_KEY = '2qp7lwiwqqc-+p4j7y#2aziz$!0+u)$iz^3=w^i@nfi49azzw+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = []
+#['192.168.2.102', '.localhost'] add to ALLOWED_HOSTS all on you network can se the site
+ALLOWED_HOSTS = ['192.168.2.102', '.localhost']
 
 
 # Application definition
