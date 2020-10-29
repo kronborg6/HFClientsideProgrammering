@@ -1,5 +1,6 @@
-TODO LIST
-TODO finde en måde at bruge en database
+TODO: LIST
+TODO: finde en måde at bruge en database
+TODO: add registra page samme måde som login
 
 26/10-2020
     Jeg har start et nyt django projekt
@@ -9,3 +10,8 @@ TODO finde en måde at bruge en database
     Jeg har add en slider til home page
     jeg er igang med at gøre mig klare til at lave nogle table
     jeg add produt.html som hvor aller produt som bliver add til database skal visse der med en prise og hvor man kan få det i danmark
+28/10-2020
+    Jeg har add så man kan login nu
+    add Produt til database nu
+    add kontak page
+    Overvejer at add kontak page samme måde som login (ved ikke om det skal være en page for sig selv eller ikke??)
