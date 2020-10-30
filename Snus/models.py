@@ -8,6 +8,7 @@ class SnusProdut(models.Model):
     nikotinindhold = models.IntegerField()
     Prise = models.FloatField(max_length=100)
     Description = models.TextField()
+    img = models.IntegerField()
     valdait = models.IntegerField(default=0)
 
 

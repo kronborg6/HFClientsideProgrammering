@@ -12,7 +12,7 @@ def kontakt(request):
         if form.is_valid():
             form.save()
             messages.success(request, f'Din besked er blevet Modtaget')
-            return redirect('web-home')
+            return redirect('Site-Home')
 
     return render(request, "Snus/Kontakt.html", {'form': form})
 
