@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class SnusProdut(models.Model):
     Navn = models.CharField(max_length=100)
     ProdutName = models.CharField(max_length=100)
-    nikotinindhold = models.IntegerField(max_length=10)
+    nikotinindhold = models.IntegerField()
     Prise = models.FloatField(max_length=100)
     Description = models.TextField()
     valdait = models.IntegerField(default=0)

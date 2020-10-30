@@ -2,22 +2,36 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, logout, login
 from django.contrib import messages
+from .forms import CreateUserForm
 
 def home(request):
         if request.method == 'POST':
-            username = request.POST.get('username')
-            password = request.POST.get('password')
+            if request.POST.get('submit') == 'sign_in':
+                username = request.POST.get('username')
+                password = request.POST.get('password')
 
-            user = authenticate(request, username=username, password=password)
-
-            if user is not None:
+                user = authenticate(request, username=username, password=password)
                 login(request, user)
-                messages.info(request, 'Welcome ' + username)
-                return redirect('Site-Home')
+
+                if user is not None:
+                    messages.info(request, 'Welcome ' + username)
+                    return redirect('Site-Home')
+
+            elif request.POST.get('submit') == 'sign_up':
+                form = CreateUserForm(request.POST)
+
+                if form.is_valid():
+                    form.save()
+                    user = form.cleaned_data.get('username')
+                    messages.success(request, 'Account was created for ' + user)
+                    return redirect('Site-Home')
 
             else:
                 messages.info(request, 'Username OR password is incorrect')
-        return render(request, 'Site/Home.html', {'title': 'Home'})
+        else:
+            form = CreateUserForm()
+            context = {'form': form}
+            return render(request, 'Site/Home.html', context)
 
 def test(request):
     return render(request, 'Site/Test.html', {'tittle': 'Test'})
