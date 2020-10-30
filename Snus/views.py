@@ -3,7 +3,7 @@ from django.contrib import messages
 from .models import kontakt
 from .forms import KontaktSender
 from django.contrib.auth.decorators import login_required
-
+"""
 def kontakt(request):
     if request.method == 'GET':
         form = KontaktSender()
@@ -15,7 +15,7 @@ def kontakt(request):
             return redirect('Site-Home')
 
     return render(request, "Snus/Kontakt.html", {'form': form})
-
+"""
 @login_required
 def AddProdut(request):
     pass

@@ -42,7 +42,7 @@ def home(request):
             return render(request, 'Site/Home.html', context)
 
 def test(request):
-    return render(request, 'Site/Test.html', {'tittle': 'Test'})
+    return render(request, 'Site/TesTT.html', {'tittle': 'Test'})
 
 @login_required
 def logoutUser(request):

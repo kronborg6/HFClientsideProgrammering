@@ -118,7 +118,7 @@
         <p>Please fill in this form to create an account.</p>
         {{ aform|crispy }}
     </div>
-            <button type="submit" name='submit' value="sign_up">Send Msg</button>
+            <button type="submit" name='submit' value="sign_up">Rig</button>
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
       <!--<span class="psw">Forgot <a href="#">password?</a></span>-->
@@ -156,7 +156,7 @@
     <div class="container">
         {% csrf_token %}
         {{ bform|crispy }}
-      <button type="submit" name='submit' value="kontak_create">Login</button>
+      <button type="submit" name='submit' value="kontak_create">Send Msg</button>
     </div>
 
     <div class="container" style="background-color:#f1f1f1">

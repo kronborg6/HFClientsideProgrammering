@@ -1,6 +1,7 @@
 TODO: LIST
-TODO: finde en måde at bruge en database
-TODO: add registra page samme måde som login
+TODO: add produt
+TODO: finde ud af hvordan jeg skal vise mere info om produt
+TODO: finde og bruge en api lige pt youtubeAPI
 
 26/10-2020
     Jeg har start et nyt django projekt
@@ -15,3 +16,8 @@ TODO: add registra page samme måde som login
     add Produt til database nu
     add kontak page
     Overvejer at add kontak page samme måde som login (ved ikke om det skal være en page for sig selv eller ikke??)
+30/10-2020
+    jeg har lavet om på login popup og de andre popup så de alle er ens
+    Jeg har add kontak til popup
+    Overvejer at bruge youtube api til at vise en video
+    Tinger på hvordan jeg skal add produt og om de skal have en side for sig selv eller de skal popup med mere info
