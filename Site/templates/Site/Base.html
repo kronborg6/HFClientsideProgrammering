@@ -19,6 +19,7 @@
         <title>Private Website</title>
     {% endif %}
 </head>
+
 <header class="site-header">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
@@ -31,7 +32,8 @@
                     <a class="nav-link text-info" href="{% url 'Site-Home' %}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-info" href="{% url 'Site-Kontak' %}">Kontak</a>
+                    <!--<a class="nav-link text-info" href="{% url 'Site-Kontak' %}">Kontak</a>-->
+                    <a class="nav-link text-info" id="button" onclick="document.getElementById('id03').style.display='block'">Kontak</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-info" href="#">Produt</a>
@@ -50,6 +52,7 @@
                     <!--<a class="nav-link text-info" href="#">Login</a>
                     <a class="nav-link text-info" id="button" href="#">LoginTest</a>-->
                     <a class="nav-link text-info" id="button" onclick="document.getElementById('id01').style.display='block'">Login</a>
+
                 </li>
                     <li class="nav-item">
                     <!--<a class="nav-link text-info" href="#">Login</a>
@@ -67,6 +70,7 @@
     </div>
 </nav>
 </header>
+
 <body>
 {% if messages %}
     {% for message in messages %}
@@ -76,12 +80,11 @@
     {% endfor %}
 {% endif %}
 <div id="id01" class="modal">
-
   <form class="modal-content animate" action="" method="POST">
+      {% csrf_token %}
       <div class="imgcontainer">
           <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
     </div>
-    {% csrf_token %}
     <div class="container">
       <label for="uname"><b>Username</b></label>
       <input type="text" placeholder="Enter Username" name="username" required>
@@ -89,10 +92,11 @@
       <label for="psw"><b>Password</b></label>
       <input type="password" id="myInput" placeholder="Enter Password" name="password" required>
 
-      <button type="submit" name='submit' value="sign_in">Login</button>
+
       <label>
         <input type="checkbox" onclick="myFunction()"> Show Password
       </label>
+        <button type="submit" name='submit' value="sign_in">Login</button>
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
@@ -101,6 +105,28 @@
     </div>
   </form>
 </div>
+
+<div id="id02" class="modal">
+  <form class="modal-content animate" action="" method="POST">
+      {% csrf_token %}
+      <div class="imgcontainer">
+          <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+    {% csrf_token %}
+    <div class="container">
+        <h1>Sign Up</h1>
+        <p>Please fill in this form to create an account.</p>
+        {{ aform|crispy }}
+    </div>
+            <button type="submit" name='submit' value="sign_up">Send Msg</button>
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+      <!--<span class="psw">Forgot <a href="#">password?</a></span>-->
+    </div>
+  </form>
+</div>
+
+<!--
 <div id="id02" class="modal">
           <div class="imgcontainer">
   <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -111,11 +137,31 @@
       <p>Please fill in this form to create an account.</p>
       <hr>
     {% csrf_token %}
-    {{ form|crispy }}
+    {{ aform|crispy }}
       <div class="clearfix">
         <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
         <button type="submit" class="signupbtn" name="submit" value="sign_up">Sign Up</button>
       </div>
+    </div>
+  </form>
+</div>
+-->
+
+<div id="id03" class="modal">
+  <form class="modal-content animate" action="" method="POST">
+      <div class="imgcontainer">
+          <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+    {% csrf_token %}
+    <div class="container">
+        {% csrf_token %}
+        {{ bform|crispy }}
+      <button type="submit" name='submit' value="kontak_create">Login</button>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
+      <!--<span class="psw">Forgot <a href="#">password?</a></span>-->
     </div>
   </form>
 </div>

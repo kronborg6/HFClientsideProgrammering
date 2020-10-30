@@ -8,9 +8,9 @@ def kontakt(request):
     if request.method == 'GET':
         form = KontaktSender()
     else:
-        form = KontaktSender(request.POST)
-        if form.is_valid():
-            form.save()
+        bform = KontaktSender(request.POST)
+        if bform.is_valid():
+            bform.save()
             messages.success(request, f'Din besked er blevet Modtaget')
             return redirect('Site-Home')
 

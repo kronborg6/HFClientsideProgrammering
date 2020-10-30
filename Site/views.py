@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, logout, login
 from django.contrib import messages
 from .forms import CreateUserForm
-
+from Snus.forms import KontaktSender
 def home(request):
         if request.method == 'POST':
             if request.POST.get('submit') == 'sign_in':
@@ -26,11 +26,19 @@ def home(request):
                     messages.success(request, 'Account was created for ' + user)
                     return redirect('Site-Home')
 
+            elif request.POST.get('submit') == 'kontak_create':
+                bform = KontaktSender(request.POST)
+                if bform.is_valid():
+                    bform.save()
+                    messages.success(request, f'Din besked er blevet Modtaget')
+                    return redirect('Site-Home')
+
             else:
                 messages.info(request, 'Username OR password is incorrect')
         else:
-            form = CreateUserForm()
-            context = {'form': form}
+            aform = CreateUserForm()
+            bform = KontaktSender()
+            context = {'aform': aform, 'bform': bform}
             return render(request, 'Site/Home.html', context)
 
 def test(request):
