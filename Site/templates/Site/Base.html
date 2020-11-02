@@ -12,6 +12,7 @@
     <!-- Javascript from Static -->
     <script src="{% static 'Site/LoginJS.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'Site/LoginCss.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'Snus/ProdutCSS.css' %}">
 
     {% if title %}
         <title>Private Website - {{ title }}</title>
@@ -36,7 +37,7 @@
                     <a class="nav-link text-info" id="button" onclick="document.getElementById('id03').style.display='block'">Kontak</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-info" href="#">Produt</a>
+                    <a class="nav-link text-info" href="{% url 'Site-Produt' %}">Produt</a>
                 </li>
                 {% if user.is_superuser %}
                     <li class="nav-item">

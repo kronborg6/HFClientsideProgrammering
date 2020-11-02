@@ -6,10 +6,13 @@ class SnusProdut(models.Model):
     Navn = models.CharField(max_length=100)
     ProdutName = models.CharField(max_length=100)
     nikotinindhold = models.IntegerField()
-    Prise = models.FloatField(max_length=100)
+    Prise = models.FloatField()
     Description = models.TextField()
-    img = models.ImageField(default="default")
+    img = models.ImageField(upload_to='SnusBildere', default="default")
     valdait = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.ProdutName + " " + self.Navn
 
 
 

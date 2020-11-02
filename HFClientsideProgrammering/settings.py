@@ -130,6 +130,8 @@ LOGIN_REDIRECT_URL = 'Site-Home'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')

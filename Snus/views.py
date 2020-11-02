@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import kontakt
+from .models import kontakt, SnusProdut
 from .forms import KontaktSender
 from django.contrib.auth.decorators import login_required
 """
@@ -16,6 +16,12 @@ def kontakt(request):
 
     return render(request, "Snus/Kontakt.html", {'form': form})
 """
+def Produt(request):
+    context = {
+        'ProdutList': SnusProdut.objects.all()
+    }
+    return render(request, 'Snus/Produt.html', context)
+
 @login_required
 def AddProdut(request):
     pass
