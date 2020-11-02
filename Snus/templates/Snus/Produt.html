@@ -3,11 +3,12 @@
 {% block content %}
 {% load static %}
 <!-- here add produt -->
-{% for SnusProdut in ProdutList %}
-    {% if SnusProdut.valdait >= 1 %}
+{% for produt in produts %}
+    {% if Produt.valdait == 1 %}
         <div class="card">
-            <img src="{% url '' %}" alt="Denim Jeans" style="width:100%">
-            <h1></h1>
+            <img src="" alt="Denim Jeans" style="width:100%">
+            <h1>{{ produt.FullName }}</h1>
+            <h1>{{ produt.Navn }}</h1>
             <p class="price">$19.99</p>
             <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
             <p><button>Add to Cart</button></p>

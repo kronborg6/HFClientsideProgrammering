@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 
-class SnusProdut(models.Model):
+class Produt(models.Model):
     Navn = models.CharField(max_length=100)
     ProdutName = models.CharField(max_length=100)
     nikotinindhold = models.IntegerField()
@@ -12,6 +12,9 @@ class SnusProdut(models.Model):
     valdait = models.IntegerField(default=0)
 
     def __str__(self):
+        return self.ProdutName + " " + self.Navn
+
+    def FullName(self):
         return self.ProdutName + " " + self.Navn
 
 

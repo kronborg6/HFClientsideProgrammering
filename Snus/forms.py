@@ -1,4 +1,4 @@
-from .models import kontakt, SnusProdut
+from .models import kontakt, Produt
 from django.forms import ModelForm
 from django import forms
 

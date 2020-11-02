@@ -1,0 +1,9 @@
+{% extends "Site/base.html" %}
+{% block content %}
+<!-- here add produt -->
+{% for produt in produts %}
+    <h1>{{ produt.FullName }}</h1>
+    <h1>{{ produt.Navn }}</h1>
+    <h1>{{ produt.Price }}</h1>
+{% endfor %}
+{% endblock content %}

@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, logout, login
 from django.contrib import messages
 from .forms import CreateUserForm
 from Snus.forms import KontaktSender
+
 def home(request):
         if request.method == 'POST':
             if request.POST.get('submit') == 'sign_in':
