@@ -9,7 +9,7 @@ class Produt(models.Model):
     Prise = models.FloatField()
     Description = models.TextField()
     img = models.ImageField(upload_to='SnusBildere', default="default")
-    valdait = models.IntegerField(default=0)
+    valdait = models.BooleanField(default=False)
 
     def __str__(self):
         return self.ProdutName + " " + self.Navn

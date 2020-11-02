@@ -21,3 +21,6 @@ TODO: finde og bruge en api lige pt youtubeAPI
     Jeg har add kontak til popup
     Overvejer at bruge youtube api til at vise en video
     Tinger på hvordan jeg skal add produt og om de skal have en side for sig selv eller de skal popup med mere info
+02/11-2020
+    Jeg er har et problem med at load minne produts
+    Jeg er næst don skal til at start på at man kan oprette produts som en admin skal kigge på før de kan komme ind
