@@ -31,6 +31,14 @@ window.onclick = function(event) {
         Oeg.style.display = "none";
     }
 }
+var Meg = document.getElementById('id05');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target === Meg) {
+        Meg.style.display = "none";
+    }
+}
 
 function myFunction() {
   var x = document.getElementById("myInput");

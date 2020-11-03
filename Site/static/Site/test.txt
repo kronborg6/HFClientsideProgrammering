@@ -1,0 +1,16 @@
+        <div class="row">
+            {% for produt in posts %}
+                {% if Produt.valdait == true %}
+                    {% if produt.ListNummer == 3 %}
+                        <div class="card">
+                            <img src="{{ produt.Img.url }}" alt="Denim Jeans" style="width:100%">
+                            <h3>{{ produt.ProductName }}</h3>
+                            <h1>{{ produt.Name }}</h1>
+                            <p>{{ produt.NicotineContent }}</p>
+                            <p class="price">{{ produt.Price }} Kr</p>
+                            <p>{{ produt.Description }}</p>
+                        </div>
+                    {% endif  %}
+                {% endif  %}
+            {% endfor %}
+        </div>

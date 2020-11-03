@@ -18,5 +18,94 @@
         <div id="id03" class="modal">
 
         </div>
+
+
+    <!--
+         here vis mere af produt
+        <div id="id05" class="modal">
+            <h1>Tedgdfg</h1>
+            <h1>Tedgdfg</h1>
+        </div>
+        -->
+        <div id="id05" class="modal">
+  <form class="modal-content animate" action="" method="POST">
+      <div class="imgcontainer">
+          <span onclick="document.getElementById('id05').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+    {% csrf_token %}
+    <div class="container">
+        <h1>dfgdfgdfgdfgdfgdfg</h1>
+      <button type="submit" name='submit' value="kontak_create">Send Msg</button>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id05').style.display='none'" class="cancelbtn">Cancel</button>
+      <!--<span class="psw">Forgot <a href="#">password?</a></span>-->
+    </div>
+  </form>
+</div>
+
+
+    <div class="container">
+    <div class="row">
+        <div class="col">
+
+        </div>
+        <div class="col-6">
+            {% for produt in posts %}
+                {% if Produt.valdait == true %}
+                        <div class="card">
+                            <img src="{{ produt.Img.url }}" alt="Denim Jeans" style="width:100%">
+                            <h3>{{ produt.ProductName }}</h3>
+                            <h1>{{ produt.Name }}</h1>
+                            <p>{{ produt.NicotineContent }}</p>
+                            <p class="price">{{ produt.Price }} Kr</p>
+                            <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+                            <p><button type="button" onclick="document.getElementById('id05').style.display='none'">more info</button></p>
+                        </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="col"></div>
+        </div>
+</div>
+
+    <div class="container"></div>
+    {% for produt in posts %}
+        {% if Produt.valdait == true %}
+            <div class="row">
+                {% if produt.ListNummer == 1 %}
+                        <div class="card">
+                            <img src="{{ produt.Img.url }}" alt="Denim Jeans" style="width:100%">
+                            <h3>{{ produt.ProductName }}</h3>
+                            <h1>{{ produt.Name }}</h1>
+                            <p>{{ produt.NicotineContent }}</p>
+                            <p class="price">{{ produt.Price }} Kr</p>
+                            <p>{{ produt.Description }}</p>
+                        </div>
+                {% endif %}
+            </div>
+            {% if produt.ListNummer == 2 %}
+                <div class="row">
+                    <div class="card">
+                            <img src="{{ produt.Img.url }}" alt="Denim Jeans" style="width:100%">
+                            <h3>{{ produt.ProductName }}</h3>
+                            <h1>{{ produt.Name }}</h1>
+                            <p>{{ produt.NicotineContent }}</p>
+                        <p class="price">{{ produt.Price }} Kr</p>
+                        <p>{{ produt.Description }}</p>
+                    </div>
+
+                </div>
+            {% endif  %}
+            {% if produt.ListNummer == 3 %}
+                <div class="row">
+
+                </div>
+            {% endif  %}
+        {% endif %}
+    {% endfor %}
+</div>
+
 {% endfor %}
 {% endblock content %}
