@@ -8,7 +8,9 @@ class KontaktSender(forms.ModelForm):
         fields = ['Name', 'Email', 'subject', 'message']
 
 class SnusOpret(forms.ModelForm):
-    pass
+    class Meta:
+        model = Produt
+        fields = ['Name', 'ProductName', 'NicotineContent', 'Price', 'Description', 'Img']
 
 class SnusPost(forms.ModelForm):
     pass

@@ -1,0 +1,25 @@
+{% extends "Site/base.html" %}
+{% load crispy_forms_filters %}
+{% block content %}
+{% load static %}
+<!-- here add produt -->
+    <h1>Test</h1>
+{% for produt in posts %}
+    {% if Produt.valdait == true %}
+        <div class="card">
+            <img src="{{ produt.Img.url }}" alt="Denim Jeans" style="width:100%">
+            <h2>{{ produt.Name }}</h2>
+            <h1>{{ produt.ProductName }}</h1>
+            <p>{{ produt.NicotineContent }}</p>
+            <p class="price">{{ produt.Price }} Kr</p>
+            <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+            <p><button>more info</button></p>
+        </div>
+
+        <!-- here vis mere af produt -->
+        <div id="id03" class="modal">
+
+        </div>
+    {% endif %}
+{% endfor %}
+{% endblock content %}

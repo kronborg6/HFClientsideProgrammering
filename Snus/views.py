@@ -1,13 +1,10 @@
 from django.contrib.auth import authenticate, login
-from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import kontakt, Produt
-from .forms import KontaktSender
+from .models import Produt
+from .forms import KontaktSender, SnusOpret
 from django.contrib.auth.decorators import login_required
 from Site.forms import CreateUserForm
 from django.shortcuts import render, redirect
-
-
 
 """
 def kontakt(request):
@@ -21,12 +18,14 @@ def kontakt(request):
             return redirect('Site-Home')
 
     return render(request, "Snus/Kontakt.html", {'form': form})
-"""
+
+
 def Snus(request):
     context = {
-        'produts': Produt.objects.all()
+        'posts': Produt.objects.all()
     }
-    return render(request, 'Snus/Produt.html', context)
+    return render(request, 'Snus/ProdutTest2.html', context)
+    """
 
 #@login_required
 def SnusTest(request):
@@ -51,6 +50,13 @@ def SnusTest(request):
                 messages.success(request, 'Account was created for ' + user)
                 return redirect('Site-Snus')
 
+        elif request.POST.get('submit') == 'Produt_create':
+            cform = SnusOpret(request.POST)
+            if cform.is_valid():
+                cform.save()
+                messages.success(request, 'Produt skal blive godkent af en admin')
+                return redirect('Site-Home')
+
         elif request.POST.get('submit') == 'kontak_create':
             bform = KontaktSender(request.POST)
             if bform.is_valid():
@@ -63,8 +69,9 @@ def SnusTest(request):
     else:
         aform = CreateUserForm()
         bform = KontaktSender()
-        context = {'aform': aform, 'bform': bform, 'produts': Produt.objects.all()}
-        return render(request, 'Snus/Produt.html', context)
+        cform = SnusOpret()
+        context = {'aform': aform, 'bform': bform, 'cform': cform}
+        return render(request, 'Snus/ProdutTest2.html', context)
 
 
 @login_required

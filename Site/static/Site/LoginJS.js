@@ -23,6 +23,14 @@ window.onclick = function(event) {
         Keg.style.display = "none";
     }
 }
+var Oeg = document.getElementById('id04');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target === Oeg) {
+        Oeg.style.display = "none";
+    }
+}
 
 function myFunction() {
   var x = document.getElementById("myInput");
