@@ -1,44 +1,27 @@
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
+//Login Form
+function LoginForm(e) {
+    document.getElementById("id01").style.display = "block";
 }
-var Reg = document.getElementById('id02');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target === Reg) {
-        Reg.style.display = "none";
-    }
+//Sing up form
+function SingUpForm(e) {
+    document.getElementById("id02").style.display = "block";
+}
+//Kontak form
+function KontakForm(e) {
+    document.getElementById("id03").style.display = "block";
+}
+//Create Prudt From
+function CreatePrudtFrom(e) {
+    document.getElementById("id04").style.display = "block";
 }
 
-var Keg = document.getElementById('id03');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target === Keg) {
-        Keg.style.display = "none";
+window.addEventListener("click", function(event) {
+// When the user clicks on element with class="modal", close it
+    console.log(event.target); // element that was clicked
+    if (event.target.className === "modal") {
+        event.target.style.display = "none";
     }
-}
-var Oeg = document.getElementById('id04');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target === Oeg) {
-        Oeg.style.display = "none";
-    }
-}
-var Meg = document.getElementById('id05');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target === Meg) {
-        Meg.style.display = "none";
-    }
-}
+});
 
 function myFunction() {
   var x = document.getElementById("myInput");

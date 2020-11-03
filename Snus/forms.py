@@ -12,5 +12,6 @@ class SnusOpret(forms.ModelForm):
         model = Produt
         fields = ['Name', 'ProductName', 'NicotineContent', 'Price', 'Description', 'Img']
 
+
 class SnusPost(forms.ModelForm):
     pass

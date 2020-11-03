@@ -39,22 +39,25 @@ def SnusTest(request):
 
             if user is not None:
                 messages.info(request, 'Welcome ' + username)
-                return redirect('Site-Snus')
+                return redirect('Site-Home')
 
         elif request.POST.get('submit') == 'sign_up':
-            form = CreateUserForm(request.POST)
-
-            if form.is_valid():
-                form.save()
-                user = form.cleaned_data.get('username')
+            aform = CreateUserForm(request.POST)
+            if aform.is_valid():
+                aform.save()
+                user = aform.cleaned_data.get('username')
                 messages.success(request, 'Account was created for ' + user)
-                return redirect('Site-Snus')
+                return redirect('Site-Home')
 
         elif request.POST.get('submit') == 'Produt_create':
-            cform = SnusOpret(request.POST)
-            if cform.is_valid():
-                cform.save()
-                messages.success(request, 'Produt skal blive godkent af en admin')
+            if request.user.is_authenticated:
+                cform = SnusOpret(request.POST)
+                if cform.is_valid():
+                    cform.save()
+                    messages.success(request, 'Produt skal blive godkent af en admin')
+                    return redirect('Site-Home')
+            else:
+                messages.error(request, 'Du er ikke logget in')
                 return redirect('Site-Home')
 
         elif request.POST.get('submit') == 'kontak_create':
@@ -62,15 +65,16 @@ def SnusTest(request):
             if bform.is_valid():
                 bform.save()
                 messages.success(request, f'Din besked er blevet Modtaget')
-                return redirect('Site-Snus')
+                return redirect('Site-Home')
 
         else:
             messages.info(request, 'Username OR password is incorrect')
+
     else:
         aform = CreateUserForm()
         bform = KontaktSender()
         cform = SnusOpret()
-        context = {'aform': aform, 'bform': bform, 'cform': cform}
+        context = {'aform': aform, 'bform': bform, 'cform': cform, 'posts': Produt.objects.all()}
         return render(request, 'Snus/ProdutTest2.html', context)
 
 

@@ -24,3 +24,6 @@ TODO: finde og bruge en api lige pt youtubeAPI
 02/11-2020
     Jeg er har et problem med at load minne produts
     Jeg er næst don skal til at start på at man kan oprette produts som en admin skal kigge på før de kan komme ind
+03/11-2020
+    Jeg har fix alt hvad jeg kunne finde af fejl
+    add lavet op på nåde af javascript

@@ -9,9 +9,8 @@ class Produt(models.Model):
     NicotineContent = models.IntegerField()
     Price = models.FloatField()
     Description = models.TextField()
-    Img = models.ImageField(upload_to='SnusBildere', default="default")
+    Img = models.ImageField(upload_to='SnusBildere', default='default.png')
     Value = models.BooleanField(default=False)
-    ListNummer = models.IntegerField(default=1)
 
     def __str__(self):
         return self.ProductName + " " + self.Name
